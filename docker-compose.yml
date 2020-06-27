@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    image: postgres:11.5
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  runshots:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/runshots
+      - public-data:/runshots/public
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+volumes:
+  public-data:
+  postgresql-data:
+    driver: local
