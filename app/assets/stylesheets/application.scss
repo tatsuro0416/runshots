@@ -1,1 +1,25 @@
 @import "bootstrap";
+
+
+// 共通
+
+// 登録画面
+.box {
+  max-width: 580px;
+  width: 95%;
+  background: #ffffff;
+  margin: 2rem auto 0;
+  padding: 2rem 5rem;
+}
+
+.form {
+  margin-top: 2rem;
+  position: relative;
+  &-box {
+    position: relative;
+  }
+}
+
+.login-title {
+  margin-bottom: 30px;
+}
