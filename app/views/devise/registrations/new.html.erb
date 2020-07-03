@@ -1,5 +1,5 @@
 <div class="text-center box form" style="padding:50px 0">
-	<div class="logo login-title">Sign up</div>
+	<div class="logo mb-3 h2">Sign up</div>
 	<!-- Main Form -->
 	<div class="login-form-1">
 		<form id="register-form" class="text-left">
@@ -19,15 +19,13 @@
               <div class="form-group">
                 <%= form.password_field :password_confirmation, autofocus: true, class: "form-control", placeholder: "Password confirmation" %>
               </div>
-
+              <div class="actions mb-1">
+                <%= form.submit "sign up!", class: "login-button" %>
+              </div>
           <% end %>
-					
-					
-					
 				</div>
-				<%# <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button> %>
         <div class="etc-login-form">
-			    <p>already have an account? <a href="#">login here</a></p>
+			    <p>already have an account? <%= link_to "login here", new_user_session_path %></p>
         </div>
 			</div>
 		</form>
