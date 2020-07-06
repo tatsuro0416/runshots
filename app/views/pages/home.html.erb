@@ -1,0 +1,24 @@
+<div class="top-image">
+  <div class="container text-light">
+    <h1>旅するように走ろう。</h1>
+    <a class="text-light">おすすめのランルート情報を共有できるサイトです。</a>
+    <% if user_signed_in? %>
+      <div class="row mt-3">
+        <div class="col-6">
+          <p>Share your experiences  <%= link_to "Post here", new_user_session_path %></p>
+        </div>
+      </div>
+    <% else %>
+      <div class="row mt-3">
+        <div class="col-2">
+          <%= link_to "Get started »", new_user_registration_path, class: "btn btn-primary p-1" %>
+        </div>
+      </div>
+      <div class="row mt-1">
+        <div class="col-6">
+          <p>Already have an account? <%= link_to "Login here", new_user_session_path %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

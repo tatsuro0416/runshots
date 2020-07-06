@@ -1,12 +1,12 @@
-<div class="text-center box form" style="padding:50px 0">
-	<div class="logo mb-3 h2">Login</div>
-	<!-- Main Form -->
-	<div class="login-form-1">
-		<form id="register-form" class="text-left">
-			<div class="login-form-main-message"></div>
-			<div class="main-login-form">
-				<div class="login-group">
-          <%= form_with scope: resource, as: resource_name, url: user_session_path(resource_name), local: true, method: :post do |form| %>
+<div class="container">
+  <div class="text-center box form" style="padding:50px 0">
+    <div class="logo mb-3 h2">Login</div>
+    <!-- Main Form -->
+    <div class="login-form-1">
+      <div class="login-form-main-message"></div>
+      <div class="main-login-form text-left">
+        <div class="login-group">
+          <%= form_with scope: resource, as: resource_name, url: session_path(resource_name), local: true, method: :post do |form| %>
               <div class="form-group">
                 <%= form.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
               </div>
@@ -17,12 +17,12 @@
                 <%= form.submit "Login", class: "login-button" %>
               </div>
           <% end %>
-				</div>
-        <div class="etc-login-form">
-          <p class="mb-0">forgot your password? <%= link_to "login here", new_user_session_path %></p>
-          <p>new user? <%= link_to "create new account", new_user_registration_path %></p>
         </div>
-			</div>
-		</form>
-	</div>
+        <div class="etc-login-form">
+          <p class="mb-0">Forgot your password? <%= link_to "login here", new_user_session_path %></p>
+          <p>New user? <%= link_to "Create new account", new_user_registration_path %></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
