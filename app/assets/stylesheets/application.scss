@@ -1,0 +1,32 @@
+@import "bootstrap";
+
+
+// 共通
+
+// 登録画面
+.box {
+  max-width: 580px;
+  width: 95%;
+  background: #ffffff;
+  margin: 2rem auto 0;
+  padding: 2rem 5rem;
+}
+
+.form {
+  margin-top: 2rem;
+  position: relative;
+  &-box {
+    position: relative;
+  }
+}
+
+// トップページ
+.top-image {
+  background-image: url(image-path('background.jpg'));
+  background-size: cover;
+  background-position: center;
+  min-height: calc(100vh - 100px);
+  width: 100%;
+  padding-top: 4rem;
+  position: relative;
+}

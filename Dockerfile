@@ -1,8 +1,7 @@
 FROM ruby:2.6.2
-RUN apt-get update -qq &&  \
-    apt-get install --no-install-recommends -y nodejs postgresql-client && \
-    apt-get install -y vim
-
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get install -y vim
 RUN mkdir /runshots
 WORKDIR /runshots
 COPY Gemfile /runshots/Gemfile
