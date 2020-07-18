@@ -1,0 +1,31 @@
+ja:
+  enums:
+    post:
+      loadtype:
+        normal: "ロード　"
+        trail: "トレイル　"
+        beach: "ビーチ　"
+        track: "トラック　"
+      timezone:
+        morning: "朝　"
+        daytime: "昼間　"
+        evening: "夕方　"
+        night: "夜　"
+      updown:
+        few: "少ない　"
+        less: "少なめ　"
+        general: "普通　"
+        extra: "多め　"
+        lot: "多い　"
+      trafficlight:
+        few: "少ない　"
+        less: "少なめ　"
+        general: "普通　"
+        extra: "多め　"
+        lot: "多い　"
+      crowd:
+        few: "少ない　"
+        less: "少なめ　"
+        general: "普通　"
+        extra: "多め　"
+        lot: "多い　"
