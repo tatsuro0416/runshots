@@ -8,12 +8,16 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-        redirect_to root_path
+        redirect_to post_path(@post.id)
         flash[:notice] = '投稿に成功しました'
     else  
       redirect_to root_path
       flash[:alert] = '投稿に失敗しました'
     end
+  end
+
+  def show
+      @post = Post.find_by(id: params[:id])
   end
 
   private
