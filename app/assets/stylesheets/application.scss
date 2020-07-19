@@ -15,9 +15,7 @@
 .form {
   margin-top: 2rem;
   position: relative;
-  &-box {
-    position: relative;
-  }
+  background: #ffffff;
 }
 
 // トップページ
@@ -29,4 +27,40 @@
   width: 100%;
   padding-top: 4rem;
   position: relative;
+}
+
+// Post new
+.file-picture__label {
+  color: #fff;
+  background: #008DC7;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: .75rem;
+}
+
+.file-picture {
+  display: none;
+}
+
+.preview {
+  display: none;
+  &__on {
+    display: block;
+    margin-top: 3rem;
+    #preview-inner {
+      overflow: scroll;
+      display: flex;
+    }
+  }
+}
+
+.form-label{
+  width: 100%;
+  background-color: gainsboro;
+  padding: 5px;
+}
+
+summary{
+  cursor: pointer;
+  outline: none;
 }
