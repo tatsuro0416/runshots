@@ -64,3 +64,76 @@ summary{
   cursor: pointer;
   outline: none;
 }
+
+// ユーザー画面
+.user-canvas {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  color: #eeeeee;
+  margin-bottom: 4rem;
+  margin-top: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  background-color: #eeffef;
+}
+
+.user-box {
+  text-align: center;
+}
+
+.user-box__image {
+  position: relative;
+}
+
+.profile-image, .profile-preview-picture {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userinfostatus
+{
+  margin-top: 60px;
+}
+
+.userinfostatus ul
+{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  text-align: center;
+}
+
+.userinfostatus li {
+  display: table-cell;
+}
+
+.userinfostatus__label {
+  font-size: 75%;
+  margin-bottom: 8px;
+}
+
+.userinfostatus__count {
+  font-weight: 700;
+}
+
+.userinfostatusalign {
+  height: 1px;
+  width: 100%;
+  background-color: #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.no-post {
+  text-align: center;
+  &__link {
+    display: inline-block;
+    border: 1px solid #222;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+  }
+
+}
