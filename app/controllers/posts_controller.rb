@@ -17,7 +17,11 @@ class PostsController < ApplicationController
   end
 
   def show
-      @post = Post.find_by(id: params[:id])
+    @post = Post.find_by(id: params[:id])
+  end
+
+  def index
+    @posts = Post.order(created_at: "DESC").page(params[:id]).without_count.per(1)
   end
 
   private

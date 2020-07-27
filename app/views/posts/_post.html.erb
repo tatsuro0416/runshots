@@ -1,0 +1,15 @@
+<div class='cource-block' >
+  <%= link_to post_path(post.id) do %>
+    <%= image_tag post.images.first.variant(combine_options:{resize:"250x170^",crop:"250x170+0+0",gravity: :center}).processed, class: 'cource-image' %>
+  <% end %>
+  <div class='cource-detail'>
+    <dl class='cource-block-dl' >
+      <dt>
+        <%= post.caption %>
+      </dt>
+      <dt>
+        <%= "#{post.caption}, #{post.caption}" %>
+      </dt>
+    </dl>
+  </div>
+</div>

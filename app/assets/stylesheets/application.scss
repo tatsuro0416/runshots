@@ -80,6 +80,11 @@ summary{
   background-color: #eeffef;
 }
 
+.user-conteiner {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
 .user-box {
   text-align: center;
 }
@@ -135,5 +140,28 @@ summary{
     border-radius: 5px;
     margin-top: 1rem;
   }
+}
 
+.cource-block{
+  margin-left: 20px;
+  margin-top: 20px;
+  width: calc((100% / 3) - 20px);
+  height: 450px;
+  border: 1px solid #e0e0e0;
+}
+
+.cource-detail{
+  padding: 0 16px;
+}
+
+.cource-block-dl{
+  border-bottom: 1px solid #e0e0e0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.cource-image{
+  height: 210px;
+  background-size: cover;
+  width: 100%;
 }

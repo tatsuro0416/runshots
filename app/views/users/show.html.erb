@@ -1,64 +1,27 @@
-<div class='container'  %>
+<div class='user-conteiner' >
   <%# header %>
   <div class='user-canvas' style='background-image: url("<%= @user.profile_image %>"))' %>
-    <div class='user-box text-dark'>
+    <div class='user-box text-dark mt-4'>
       <%= image_tag @user.profile_image, size: '150', class: 'user-box__image profile-image' %>
-      <p class='h2'><%= @user.name %></p>
-      <div class='status'>
-        <strong id='following'>
-          1 
-        </strong>
-        following 
-        <strong id='followers'>
-          3 
-        </strong>
-        followers
-      </div>
+      <p class='h2 mb-1'><%= @user.name %></p>
       <div class="follow_form_<%= @user.id %>">
       </div>
     </div>
   </div>
   
-  <%# partial化して引数に強調したいindex渡すとか？ %>
-  <div class='userinfostatus'>
-    <ul class='mb-1'>
-      <li>
-        <p class='userinfostatus__label'>投稿数</p>
-        <p class='userinfostatus__count'><%= @user.posts.count.to_s %></p>
-      </li>
-      <li>
-        <p class='userinfostatus__label'>地図</p>
-        <p class='userinfostatus__count'><%= @user.posts.count.to_s %></p>
-      </li>
-      <li>
-        <p class='userinfostatus__label'>行ってみたい！</p>
-        <p class='userinfostatus__count'><%= @user.posts.count.to_s %></p>
-      </li>
-      <li>
-        <p class='userinfostatus__label'>フォロー</p>
-        <p class='userinfostatus__count'><%= @user.posts.count.to_s %></p>
-      </li>
-      <li>
-        <p class='userinfostatus__label'>フォロワー</p>
-        <p class='userinfostatus__count'><%= @user.posts.count.to_s %></p>
-      </li>
-    </ul>
-    <div class='userinfostatusalign'></div>
-  </div>
+  <%= render 'statusinfo', user: @user %>
 
   <% if @user.posts.present? %>
-    <div>
-
-    </div>
+    <%= render 'posts/list', posts: @user.posts %>
   <% elsif user_signed_in? %>
     <div class='no-post'>
       <h4>
-        投稿はまだありません。<br>
-        最初の投稿はこちらから
+        投稿はがありません。<br>
+        投稿はこちらから
       </h4>
       <%= link_to '投稿する', new_post_path, class: 'no-post__link' %>
     </div>
+  <% else %>
+    <h4>投稿がありません｡</h4>
   <% end %>
-
-  
 </div>
