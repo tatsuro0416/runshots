@@ -1,16 +1,6 @@
 <div class='user-conteiner' >
-  <%# header %>
-  <div class='user-canvas' style='background-image: url("<%= @user.profile_image %>"))' %>
-    <div class='user-box text-dark mt-4'>
-      <%= image_tag @user.profile_image, size: '150', class: 'user-box__image profile-image' %>
-      <p class='h2 mb-1'><%= @user.name %></p>
-      <div class="follow_form_<%= @user.id %>">
-      </div>
-    </div>
-  </div>
-  
+  <%= render 'users/profile', user: @user %>
   <%= render 'statusinfo', user: @user %>
-
   <% if @user.posts.present? %>
     <%= render 'posts/list', posts: @user.posts %>
   <% elsif user_signed_in? %>
