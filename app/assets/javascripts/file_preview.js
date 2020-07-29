@@ -3,15 +3,28 @@ $(function () {
   const preview = document.getElementById('preview');
   const previewInner = document.getElementById('preview-inner');
 
-  fileInput.addEventListener('change', function (evt) {
-    if (document.getElementById('previewPicture') != null) {
-      while (previewInner.firstChild) {
-        previewInner.removeChild(previewInner.firstChild);
+  if (fileInput != null){
+    console.log('aa')
+    fileInput.addEventListener('change', function (evt) {
+      if (document.getElementById('previewPicture') != null) {
+        while (previewInner.firstChild) {
+          previewInner.removeChild(previewInner.firstChild);
+        }
       }
-    }
-    const files = fileInput.files;
-    filePreview(files);
-  }, false);
+      const files = fileInput.files;
+      filePreview(files);
+    }, false);  
+  }
+  // fileInput.addEventListener('change', function (evt) {
+  //   if (document.getElementById('previewPicture') != null) {
+  //     while (previewInner.firstChild) {
+  //       previewInner.removeChild(previewInner.firstChild);
+  //     }
+  //   }
+  //   const files = fileInput.files;
+  //   filePreview(files);
+  // }, false);
+  
   // fileをプレビューする関数
   function filePreview(files) {
     preview.classList.add('preview__on')

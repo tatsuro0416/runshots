@@ -1,0 +1,17 @@
+<div class='user-conteiner' >
+  <%= render 'users/profile', user: @user %>
+  <%= render 'statusinfo', user: @user %>
+  <% if @user.posts.present? %>
+    <%= render 'posts/list', posts: @user.posts %>
+  <% elsif user_signed_in? %>
+    <div class='no-post'>
+      <h4>
+        投稿はがありません。<br>
+        投稿はこちらから
+      </h4>
+      <%= link_to '投稿する', new_post_path, class: 'no-post__link' %>
+    </div>
+  <% else %>
+    <h4>投稿がありません｡</h4>
+  <% end %>
+</div>

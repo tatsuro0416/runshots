@@ -1,0 +1,7 @@
+<% if posts.present? %>
+  <div class='jscroll row' >
+    <% posts.each do |post| %>
+      <%= render 'posts/post', post: post, class: 'jscroll' %>
+    <% end %>
+  </div>
+<% end %>

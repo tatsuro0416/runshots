@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg bg-dark">
   <div class="container">
     <div class="navbar-translate">
-      <a class="navbar-brand text-white" href="/presentation.html">Runshots</a>
+      <%# , class: 'navbar-brand text-white' %>
+      <%= link_to 'Runshots', root_path, class: 'navbar-brand text-white h1'  %>
+      <%# <a class="navbar-brand text-white" href="/presentation.html">Runshots</a> %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="sr-only">Toggle navigation</span>
       <span class="navbar-toggler-icon"></span>
@@ -11,9 +13,18 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a href="#pablo" class="nav-link text-white">link</a>
-        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to '投稿する', new_post_path, class: 'nav-link text-white'  %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to 'プロフィール', user_path(current_user.id), class: 'nav-link text-white' %>
+          </li>
+          <li class="nav-item active">
+            
+          </li>
+        <% else %>
+        <% end %>
       </ul>
       <form class="form-inline ml-auto">
         <div class="form-group no-border">
@@ -22,6 +33,18 @@
         <button type="submit" class="btn btn-white btn-just-icon btn-round">
           <i class="material-icons">search</i>
         </button>
+
+        <% if user_signed_in? %>
+          <ul class="navbar-nav">
+            <li class='dropdown'>
+              <a href="#" class="dropdown-toggle nav-link text-white" data-toggle="dropdown" role="button">設定</a>
+              <ul class="dropdown-menu" role="menu">
+                <li><%= link_to 'ユーザー編集', edit_user_registration_path(current_user.id), class: 'text-black' %></li>
+                <li><%= link_to 'サインアウト', destroy_user_session_path, method: :delete, class: 'text-black' %></li>
+              </ul>
+            </li>
+          <ul>
+        <% end %>
       </form>
     </div>
   </div>

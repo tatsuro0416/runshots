@@ -1,0 +1,10 @@
+<div class='user-canvas' style='background-image: url("<%= rails_representation_url(user.profile_image.variant(resize: "512x512!", strip: true).processed, disposition: :inline) %>"))' %>
+  <div class='user-box text-dark mt-4'>
+    <%= image_tag user.profile_image, size: '150', class: 'user-box__image profile-image' %>
+    <p class='h2 mb-2'><%= user.name %></p>
+    <% if user != current_user %>
+      <div class="follow_form_<%= user.id %>">
+      </div>
+    <% end %>
+  </div>
+</div>
